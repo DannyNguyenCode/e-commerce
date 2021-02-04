@@ -1,0 +1,113 @@
+
+.container-wrapper{
+    display: grid;
+    grid-template-areas: 'ad1 mid mid mid mid ad2';
+}
+#container-middle{
+    grid-area: mid;
+}
+
+#container-ad1{
+    grid-area: ad1;
+}
+#container-ad2{
+    grid-area: ad2;
+}
+
+#navigation{
+    background: white;
+    border: 1px solid;
+    padding: 5px;
+    box-shadow: 1px 2px #888888;
+    position: sticky;
+    top: 0;
+    padding: 0;
+    width: 100%;
+}
+#nav{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 'home products about contact';
+    margin: 0;
+    padding: 0;
+}
+#nav-items1{
+    grid-area: home;
+    
+}
+#nav-items2{
+    grid-area: products;
+    
+}
+#nav-items3{
+    grid-area: about;
+    
+}
+#nav-items4{
+    grid-area: contact;
+    
+}
+
+#nav>li{
+    list-style-type: none;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+#nav>li>a{
+    text-decoration: none;
+    color: black;
+    
+}
+
+#nav>li:hover{
+    background-color: gray;
+    cursor: pointer;
+
+}
+#nav>li:hover a{
+    color: white;
+}
+
+
+#content{
+    display: grid;
+    grid-template-areas: 'panel product product product';
+}
+#side-panel{
+    grid-area: panel;
+    margin-top: 2em;
+}
+
+#products{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    grid-area: product;
+    margin-top: 2em;
+}
+
+
+.image-container{
+    display: flex;
+    justify-content: center;
+}
+.image>h3{
+    text-align: center;
+}
+
+#container-ad1{
+    margin-right: 10px;
+}
+#container-ad2{
+    margin-left: 10px;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .container-wrapper{
+        grid-template-areas: 'ad1 ad1 ad1 ad1 ad1 ad1' 'mid mid mid mid mid mid' 'ad2 ad2 ad2 ad2 ad2 ad2';
+    }
+
+  }
