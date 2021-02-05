@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="css/style.css">
 
 </head>
-
 <body>
     <div class="container-wrapper">
         <div id="container-ad1">
@@ -29,7 +28,15 @@
     <section id="navigation">
         <ul id="nav">
             <li id="nav-items1"><a href="#">Home</a></li>
-            <li id="nav-items2"><a href="#">Products</a></li>
+            <li id="nav-items2"onclick="expandProducts(); return false;">
+                <a id="product-link"href="#" style="display:block">Products <span id="triangle">&#9661;</span></a>
+                <ul id="sub-products" style="display: none;">
+                    <li>Product 1</li>
+                    <li>Product 2</li>
+                    <li>Product 3</li>
+                    <li>Product 4</li>  
+                </ul>
+            </li>
             <li id="nav-items3"><a href="#">About</a></li>
             <li id="nav-items4"><a href="#">Contact</a></li>
         </ul>
@@ -104,40 +111,54 @@
                     <h3>Image Name</h3><div class="image-container">
                     <img src="https://picsum.photos/200/200" alt="picsum"/></div>
                     <figcaption>Random picture from picsum</figcaption>
-                </figure>
-                <figure class="image">
-                    <h3>Image Name</h3><div class="image-container">
-                    <img src="https://picsum.photos/200/200" alt="picsum"/></div>
-                    <figcaption>Random picture from picsum</figcaption>
-                </figure>
-                <figure class="image">
-                    <h3>Image Name</h3><div class="image-container">
-                    <img src="https://picsum.photos/200/200" alt="picsum"/></div>
-                    <figcaption>Random picture from picsum</figcaption>
-                </figure>
-                <figure class="image">
-                    <h3>Image Name</h3><div class="image-container">
-                    <img src="https://picsum.photos/200/200" alt="picsum"/></div>
-                    <figcaption>Random picture from picsum</figcaption>
-                </figure>
-                <figure class="image">
-                    <h3>Image Name</h3><div class="image-container">
-                    <img src="https://picsum.photos/200/200" alt="picsum"/></div>
-                    <figcaption>Random picture from picsum</figcaption>
-                </figure>
-                <figure class="image">
-                    <h3>Image Name</h3><div class="image-container">
-                    <img src="https://picsum.photos/200/200" alt="picsum"/></div>
-                    <figcaption>Random picture from picsum</figcaption>
-                </figure>
-                <figure class="image">
-                    <h3>Image Name</h3><div class="image-container">
-                    <img src="https://picsum.photos/200/200" alt="picsum"/></div>
-                    <figcaption>Random picture from picsum</figcaption>
-                </figure>                   
+                </figure>                
         </article>
     </section>
-    <section id="footer"></section>
+    <section id="pagenation">
+        <div id="pagenation-wrapper">
+            <div><a href="#">&laquo;</a></div>
+            <div><a href="#">1</a></div>
+            <div><a href="#">2</a></div>
+            <div><a href="#">3</a></div>
+            <div><a href="#">4</a></div>
+            <div><a href="#">5</a></div>
+            <div><a href="#">&raquo;</a></div>
+        </div>
+
+    </section>
+    <section id="footer">
+        <article id="info">
+            <p id="name">Random Name</p>
+            <div id="address">
+                <p id="street">123 Fake Street</p>
+                <span id="city">Toronto,</span>
+                <span id="province">Ontario</span>
+                <span id="postalCode">M4M 2Y2</span>
+            </div>
+            <p id="phone">416 777 9999</p>
+            <p id="email">customer-support@business.com</p>
+            <p id="copyright"><span id="symbol">&copy;</span>2021, Random Name</p>
+        </article>
+        <article id="links">
+            <ul>
+                <li>Store Locator</li>
+                <li>Return Policy</li>
+                <li>Customer Support</li>
+                <li>FAQs</li>
+                
+            </ul>
+        </article>
+        <article id="social">
+            <ul>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>Discord</li>
+                <li>Youtube</li>
+                <li>Telegram</li>
+                <li>Reddit</li>
+            </ul>
+        </article>
+    </section>
 </div>
 <div id="container-ad2">
     <picture class="image-container">       
@@ -151,5 +172,18 @@
     </picture>
 </div>
 </div>
+<script>
+    function expandProducts(){
+        let subproduct = document.getElementById("sub-products")
+        let triangle = document.getElementById("triangle")
+        if(subproduct.style.display == "none"){
+            subproduct.style.display="grid"
+            triangle.innerHTML='&#9651;'
+        }else{
+            subproduct.style.display="none"
+            triangle.innerHTML='&#9661;'
+        }
+    }
+</script>
 </body>
 </html>
